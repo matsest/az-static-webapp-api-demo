@@ -26,6 +26,12 @@ npm run build
 npm run lint
 ```
 
+### Run SWA locally
+
+```bash
+swa start dist --api-location api
+```
+
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
