@@ -1,8 +1,8 @@
 {
-    "navigationFallback": {
-        "rewrite": "/index.html"
-    },
-    "auth": {
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  },
+  "auth": {
     "identityProviders": {
       "azureActiveDirectory": {
         "registration": {
@@ -11,6 +11,20 @@
           "clientSecretSettingName": "AZURE_CLIENT_SECRET"
         }
       }
+    }
+  },
+  "routes": [
+    {
+      "route": "/*",
+      "allowedRoles": [
+        "authenticated"
+      ]
+    }
+  ],
+  "responseOverrides": {
+    "401": {
+      "statusCode": 302,
+      "redirect": "/.auth/login/aad"
     }
   }
 }
